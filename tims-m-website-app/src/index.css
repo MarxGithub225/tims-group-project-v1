@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Rubik' !important;
+}
+.react-tel-input .form-control, .css-13cymwt-control, .css-t3ipsp-control, .address-form-input {
+    width: 100% !important;
+    height: 48px !important;
+    border: 1px solid #F4F6F8 !important;
+    border-radius: 8px !important;
+    font-family: 'Rubik' !important;
+}
+
+.css-t3ipsp-control {box-shadow: none !important;}
+.address-form-input {padding: 0 10px;}
+
+.react-tel-input .flag-dropdown {
+    background-color: transparent !important;
+    border: 1px solid #F4F6F8 !important;
+    border-radius: 8px 0 0 8px !important;
+}
+.form-control:focus, .css-t3ipsp-control:focus, .css-t3ipsp-control:hover, .address-form-input:focus {
+    outline: 0;
+    box-shadow: none !important;
+    border-color: #F4F6F8 !important;
+}
