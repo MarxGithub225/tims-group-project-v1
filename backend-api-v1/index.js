@@ -1,0 +1,46 @@
+const bodyParser = require("body-parser");
+const express = require("express");
+const dbConnect = require("./config/dbConnect");
+const { notFound, errorHandler } = require("./middlewares/errorHandler");
+const app = express();
+const dotenv = require("dotenv").config();
+const PORT = 4000;
+const authRouter = require("./routes/authRoute");
+const bannerRouter = require("./routes/bannerRoute");
+const brandRouter = require("./routes/brandRoute");
+const categoryRouter = require("./routes/prodcategoryRoute");
+const subcategoryRouter = require("./routes/prodsubcategoryRoute");
+const orderRouter = require("./routes/orderRoute");
+const partnerRouter = require("./routes/partnerRoute");
+const productRouter = require("./routes/productRoute");
+const refuseRouter = require("./routes/prodrefuseRoute");
+const uploadRouter = require("./routes/uploadRoute");
+const blogRouter = require("./routes/blogRoute");
+const cookieParser = require("cookie-parser");
+
+const morgan = require("morgan");
+const cors = require("cors");
+
+dbConnect(); 
+app.use(morgan("dev"));
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use("/v1/banner", bannerRouter);
+app.use("/v1/brand", brandRouter);
+app.use("/v1/category", categoryRouter);
+app.use("/v1/subcategory", subcategoryRouter);
+app.use("/v1/user", authRouter);
+app.use("/v1/product", productRouter);
+app.use("/v1/upload", uploadRouter);
+app.use("/v1/order", orderRouter);
+app.use("/v1/partner", partnerRouter);
+app.use("/v1/product-refuse", refuseRouter);
+app.use("/v1/blog", blogRouter);
+app.use('/public', express.static(__dirname+'/public/'));
+app.use(notFound);
+app.use(errorHandler);
+app.listen(PORT, () => {
+  console.log(`Server is running  at PORT ${PORT}`);
+});
