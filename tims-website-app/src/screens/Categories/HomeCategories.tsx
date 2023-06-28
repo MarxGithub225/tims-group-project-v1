@@ -33,8 +33,8 @@ function HomeCategories() {
                 <div className="header w-full rounded-t-xl">
                 <OnlineLoader width="100%" height="42px" radius={2}/>
                 </div>
-                <div className="grid grid-cols-4 products-list gap-x-6 gap-y-6" style={{borderBottom: '1px dashed #f4a609'}}>
-                {[0, 1, 2, 3, 4, 7, 6,7].map((p: any, index: number) => {
+                <div className="grid grid-cols-5 products-list gap-x-6 gap-y-6" style={{borderBottom: '1px dashed #f4a609'}}>
+                {[0, 1, 2, 3, 4, 7, 6,7, 8, 9].map((p: any, index: number) => {
                   return <ProductLoader
                     width={255}
                     height={380}

@@ -8,6 +8,10 @@ var prodcategorySchema = new mongoose.Schema(
       required: true,
       unique: true
     },
+    icon: {
+      type: String,
+      maxLength: 255
+    },
     image: {
       type: String,
       maxLength: 255

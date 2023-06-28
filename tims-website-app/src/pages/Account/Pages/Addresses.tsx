@@ -162,7 +162,7 @@ function Addresses({from}: any) {
   });
   }
 
-  return <div className={`${ window.innerWidth <= 768 ? 'px-2 pt-2 pb-32': ''}`}>
+  return <div>
 
   <div className="page-header flex justify-between items-center">Mes adresses 
     <div className="edit-info-button"
@@ -254,7 +254,7 @@ function Addresses({from}: any) {
   {
     userAddresses.map((add: any, key: number) => {
       return <AddressItem
-      from={`${ window.innerWidth <= 768 ? (from ? from : ''): 'address-list'}`}
+      from={`address-list`}
       setNewAddress = {setNewAddress}
       deleteAddress={(id: number) => deleteAddress(id)}
       key={key}
@@ -264,16 +264,7 @@ function Addresses({from}: any) {
       />
     })
   }
-  {window.innerWidth <= 768 && <div className="w-full flex justify-center"
-  onClick={() => navigate(-1)}
-  >
-        <div className="w-full px-3 py-2 rounded-full text-lg text-center"
-        style={{
-            background: "#E73A5D",
-            color: "#FFF"
-        }}
-        >Enregistrer</div>
-    </div>}
+
 </div>;
 }
 

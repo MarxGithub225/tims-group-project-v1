@@ -177,7 +177,9 @@ function CartItemCard(props: any) {
   }
   return <div className="cart-item-product">
     <div className="cart-item-product-header flex items-center">
-      <div className="cart-item-product-image rounded" style={{backgroundImage: `url('${currentProduct?.image}')`}}/>
+      <div className="cart-item-product-image rounded cursor-pointer" onClick={() => {
+          navigate(`/details/${currentProduct?.product?._id}`)
+        }} style={{backgroundImage: `url('${currentProduct?.image}')`}}/>
      
        <div className="">
         <div className="cart-item-product-title tims-txt cursor-pointer"
@@ -185,7 +187,9 @@ function CartItemCard(props: any) {
           navigate(`/details/${currentProduct?.product?._id}`)
         }}
         >{currentProduct?.product?.title}</div>
-        <div className="cart-item-product-category">SKU: {currentProduct?.sku} {currentProduct?.label ? `| Taille: ${currentProduct?.label}`: ''}  </div>
+        <div className="cart-item-product-category cursor-pointer" onClick={() => {
+          navigate(`/details/${currentProduct?.product?._id}`)
+        }}>SKU: {currentProduct?.sku} {currentProduct?.label ? `| Taille: ${currentProduct?.label}`: ''}  </div>
         {currentProduct?.quantity <= 10 && <div className="flex items-center" style={{fontSize: 13}}>
           <AlertCircle size={15} className={currentProduct?.quantity > 5 ? 'text-yellowLightColor': 'text-redColor'} /> {currentProduct?.quantity > 5 ? <span className="text-yellowLightColor ml-1">Quelques articles restants</span>: <span className="text-redColor ml-1">{currentProduct?.quantity} articles seulement</span>}
         </div>}

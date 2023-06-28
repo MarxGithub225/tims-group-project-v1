@@ -368,11 +368,11 @@ const getAllProductsGroupByCategory = asyncHandler(async (req, res) => {
         $sort: { "-createdAt": -1 } 
       },
       { $match:{ approved: true, isBlocked: false}},
-      {$group : {_id: "$categoryId", count:{$sum:1}, categoryId: {$addToSet: "$categoryId"}, data: { $push: '$$ROOT' }}},
+      {$group : {_id: "$subcategoryId", count:{$sum:1}, subcategoryId: {$addToSet: "$subcategoryId"}, data: { $push: '$$ROOT' }}},
       
     ])
    
-   const product = await Product.populate(query, {path: "categoryId"});
+   const product = await Product.populate(query, {path: "subcategoryId"});
    res.json({ data: product });
  } catch (error) {
    throw new Error(error);

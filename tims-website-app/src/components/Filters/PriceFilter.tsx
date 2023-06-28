@@ -6,7 +6,7 @@ function PriceFilter({loading,
   setPriceFilter
 }: any) {
   return <div className="popular-filter tablet:p-4">
-    {window.innerWidth > 768 && <div className="label"> <div className="label">{loading ? <OnlineLoader width="200px" height="12px" />: 'Intervalle de prix'}</div></div>}
+    <div className="label"> <div className="label">{loading ? <OnlineLoader width="200px" height="12px" />: 'Intervalle de prix'}</div></div>
 
     {loading ? <div className="mt-6"><OnlineLoader width="240px" height="42px" /></div>: 
     <div className="flex items-center mt-6 laptop:mt-2 price-filter">

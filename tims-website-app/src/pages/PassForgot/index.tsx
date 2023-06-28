@@ -162,7 +162,7 @@ function ForgotPassPage() {
     {sent && <div className="w-3/6 pl-12 px-6 py-3">
 
     <div className="flex flex-col items-center">
-        <SuccessIcon className={`${window.innerWidth <=768 ? 'w-16': ''}`} />
+        <SuccessIcon />
         <div className="state-header">Message envoyé !</div>
         <div className="state-message">
         Un lien vous a été envoyé dans votre boîte de messagérie, Merci de suivre les instructions. </div>

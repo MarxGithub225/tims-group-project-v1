@@ -19,7 +19,6 @@ function Home() {
   <BestProduct/>
   <HomeProductBanner/>
   <HomeCategories/>
-  {/* <ProductLists/> */}
   <BlogLists/>
   <PartnerLists/>
   </>;

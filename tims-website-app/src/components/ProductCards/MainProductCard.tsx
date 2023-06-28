@@ -62,7 +62,7 @@ function MainProductCard({_id, title, subcategoryId, cost, image, totalrating, c
   return <div className="relative main-product-card">
 
     
-    <div className="relative main-product-card-content">
+    <div className="relative main-product-card-content" onClick={() => {navigate(`/details/${_id}`)}}>
       <div className="absolute top-4 right-4 z-50" onClick={() => onSubmit()}>
         {liked ? <HeartIcon/>: <Heart color="#e73a5d" size={17} />}
       </div>

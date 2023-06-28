@@ -6,10 +6,10 @@ import { useNavigate, useParams } from "react-router-dom";
 function OrderStatus() {
   const navigate = useNavigate()
   let {orderId} = useParams()
-  return <div className={`order-status ${window.innerWidth <=768 ? 'p-4': ''}`}>
+  return <div className={`order-status `}>
     <div className="w-max-width">
       <div className="flex flex-col items-center">
-        <SuccessIcon className={`${window.innerWidth <=768 ? 'w-16': ''}`} />
+        <SuccessIcon />
         <div className="state-header">Commande passée avec succès !</div>
         <div className="state-message">
         Merci pour votre commande. Elle sera traitée dans les plus brefs délais. N'oubliez pas de noter votre numéro de commande, qui est <span className="uppercase">{orderId}</span>.

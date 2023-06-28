@@ -20,7 +20,7 @@ function CategoryGroupProducts({id, background, categoryTitle, _products}: Categ
           className="uppercase cursor-pointer ">Voir plus de {_products?.length} produits</Link>
           </div>: <></>}
       </div>
-      <div className="grid grid-cols-4 products-list gap-x-6" style={{borderBottom: '1px dashed #f4a609'}}>
+      <div className="grid grid-cols-5 products-list gap-x-6" style={{borderBottom: '1px dashed #f4a609'}}>
       {_products
       .slice(0, 20)
       .map((p: any, index: number) => {

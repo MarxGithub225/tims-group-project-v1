@@ -83,6 +83,7 @@ const SidebarSubCategory = ({ open, toggleSidebar,
   ];
 
   const [category, setCategory] = useState({
+    icon: '',
     name: '',
     image: null,
     isBlocked: false,
@@ -112,6 +113,7 @@ const SidebarSubCategory = ({ open, toggleSidebar,
         })
         .then(() => {
           setCategory({
+            icon: '',
             name: '',
             image: null,
             isBlocked: false,
@@ -159,6 +161,7 @@ const SidebarSubCategory = ({ open, toggleSidebar,
         })
         .then(() => {
           setCategory({
+            icon: '',
             name: '',
             image: null,
             isBlocked: false,
@@ -212,6 +215,7 @@ const SidebarSubCategory = ({ open, toggleSidebar,
 
   const close = () => {
     setCategory({
+      icon: '',
       name: '',
       image: null,
       isBlocked: false,
@@ -260,6 +264,89 @@ const SidebarSubCategory = ({ open, toggleSidebar,
             <option value='1'>Visible</option>
             <option value='0'>Non visible</option>
           </Input>
+        </FormGroup>
+        <FormGroup>
+          <Label for='icon'>
+              Icon <span className='text-danger'>*</span>
+            </Label>
+
+            {
+                category.icon ?
+              <div
+              style={{
+                position: 'relative',
+                height: 200
+              }}
+              >
+
+                <center><img src={`${file_url}/categories/${category.icon}`} alt="icon" style={{borderRadius: 5, width: "auto", height: 172, marginBottom: 20}}/></center>
+
+                <div
+              style={{
+                position: 'absolute',
+                right: 15,
+                top: 15
+              }}
+              >
+                {delete1Loading ? <Spinner/>:
+                <Trash color='red' style={{cursor: 'pointer'}} 
+                onClick = {async () => {
+                  setDelete1Loading(true)
+                  if(!editMode) {
+                    await axios.delete(`${base_url}upload/delete/categories/${category.icon}`, config).then((res) => {
+                      setCategory({...category, icon: null})
+                      setDelete1Loading(false)
+                    }).catch((err) => {
+                      console.log(err)
+                      setDelete1Loading(false)
+                      toast.error(
+                        'La suppression a échoué, veuillez réessayer',
+                        { transition: Slide, hideProgressBar: true, autoClose: 2000 }
+                      )
+                    })
+                  }else {
+                    await axios.delete(`${base_url}category/delete-icon/${currentData?._id}/${category.icon} `, config).then((res) => {
+                      setCategory({...category, icon: null})
+                      setDelete1Loading(false)
+                    }).catch((err) => {
+                      console.log(err)
+                      setDelete1Loading(false)
+                      toast.error(
+                        'La suppression a échoué, veuillez réessayer',
+                        { transition: Slide, hideProgressBar: true, autoClose: 2000 }
+                      )
+                    })
+                  }
+                }}
+                />
+                }
+
+              </div>
+              </div> :
+              <>
+              {image1Loading ? <Spinner/> :
+              <FileDropzone editMode = {editMode} onChange = {async (file) => {
+                const formData = new FormData();
+                formData.append("image", file);
+                setImage1Loading(true)
+                await axios.post(`${base_url}upload/category`, formData, config).then((res) => {
+                  setCategory({...category, icon: res.data?.filename})
+                  setImage1Loading(false)
+                })
+                .catch((err) => {
+                  console.log(err)
+                  setImage1Loading(false)
+                  toast.error(
+                    'Le téléchargement a échoué, veuillez réessayer',
+                     { transition: Slide, hideProgressBar: true, autoClose: 2000 }
+                   )
+                })
+                
+              } } />
+              }
+              </>
+            }
+          
         </FormGroup>
         <FormGroup>
           <Label for='image'>
@@ -365,6 +452,7 @@ const SidebarSubCategory = ({ open, toggleSidebar,
           ||
           (
             !category.name ||
+            !category.icon ||
             !category.image
           )
         }

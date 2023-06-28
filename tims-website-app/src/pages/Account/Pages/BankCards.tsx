@@ -7,7 +7,7 @@ function BankCards({from}: any) {
   const navigate = useNavigate()
   const [newAddress, setNewAddress] = useState<boolean>(false)
   
-  return <div className={`${ window.innerWidth <= 768 ? 'p-4': ''}`}>
+  return <div >
 
   <div className="page-header flex justify-between items-center">Mes cartes 
     <div className="edit-info-button"
@@ -65,22 +65,11 @@ function BankCards({from}: any) {
                 </div>
                 </div>
   </div>}
-  <BankUpdateItem from={`${ window.innerWidth <= 768 ? (from ? from : ''): 'address-list'}`} isPrincipal/>
-  <BankUpdateItem from={`${ window.innerWidth <= 768 ? (from ? from : ''): 'address-list'}`} />
-  <BankUpdateItem from={`${ window.innerWidth <= 768 ? (from ? from : ''): 'address-list'}`} />
-  <BankUpdateItem from={`${ window.innerWidth <= 768 ? (from ? from : ''): 'address-list'}`} />
-  <BankUpdateItem from={`${ window.innerWidth <= 768 ? (from ? from : ''): 'address-list'}`} />
-
-  {window.innerWidth <= 768 && <div className="w-full flex justify-center"
-  onClick={() => navigate(-1)}
-  >
-        <div className="w-full px-3 py-2 rounded-full text-lg text-center"
-        style={{
-            background: "#E73A5D",
-            color: "#FFF"
-        }}
-        >Enregistrer</div>
-    </div>}
+  <BankUpdateItem from={`address-list`} isPrincipal/>
+  <BankUpdateItem from={`address-list`} />
+  <BankUpdateItem from={`address-list`} />
+  <BankUpdateItem from={`address-list`} />
+  <BankUpdateItem from={`address-list`} />
 </div>;
 }
 

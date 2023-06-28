@@ -60,7 +60,7 @@ const CardCarousel = ({
   for (let i = 0; i < Math.ceil(children?.length - show + 1); i++) {
     items.push(i)
   }
-  const intervalle = show === 5 ? (window.innerWidth <= 768 ?  83: 190): 110;
+  const intervalle = show === 5 ? 190: 110;
   return (
     <div className='relative flex flex-row w-full'>
       <div className='carousel-wrapper'>

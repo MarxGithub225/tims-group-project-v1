@@ -6,8 +6,6 @@ import axios from 'axios'
 import { base_url } from "../../utils/baseUrl"
 import ProductLoader from "../../components/Loaders/ProductLoader";
 import { useEffect, useState } from 'react';
-import MobileProductCard from "../ProductCards/MobileProductCard";
-import CardCarousel from "../CardCarousel";
 
 function RelatedProducts({categoryId, productId}: any) {
 
@@ -15,19 +13,11 @@ function RelatedProducts({categoryId, productId}: any) {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 4
+      items: 5
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 3
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2
+      items: 5
     }
   };
 
@@ -55,11 +45,11 @@ function RelatedProducts({categoryId, productId}: any) {
    
   }, [categoryId])
   return <>{(loading || _products.length)? <div className="related-products">
-      {window.innerWidth > 768 ? <DetailsTitle title = "Produits similaires" />:  <div className="px-4 option-header">Produits similaires</div>}
+      <DetailsTitle title = "Produits similaires" />
       {loading ? 
       <>
-        <div className="grid grid-cols-4 gap-6 products-list">
-        {[0, 1, 2, 3].map((p: any, index: number) => {
+        <div className="grid grid-cols-5 gap-6 products-list">
+        {[0, 1, 2, 3, 4].map((p: any, index: number) => {
           return <ProductLoader
             width={255}
             height={380}
@@ -68,7 +58,7 @@ function RelatedProducts({categoryId, productId}: any) {
         </div>
       </> :
       <>
-      {window.innerWidth > 768 ? <Carousel responsive={responsive} 
+      <Carousel responsive={responsive} 
       >
         {_products.map((p: any, index: number) => {
           return <MainProductCard
@@ -77,15 +67,7 @@ function RelatedProducts({categoryId, productId}: any) {
           />
         })}
         
-      </Carousel>:  <CardCarousel show={2} academyArrows>
-        {_products.map((p: any, index: number) => {
-          return <MobileProductCard
-            {...p}
-            from= 'related-product'
-          />
-        })}
-        
-      </CardCarousel>}
+      </Carousel>
       </>}
   </div>: <></>}</>;
 }

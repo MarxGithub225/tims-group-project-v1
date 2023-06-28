@@ -8,14 +8,14 @@ function ReviewItem(props: any) {
   const [readMore, setReadMore] = useState<boolean>(false)
   return <div className="review-item ">
     <div className="flex justify-between w-full ">
-     <div className={`flex items-center review-item-header ${window.innerWidth <= 768 && 'w-full justify-between'}`}>
-        {window.innerWidth > 768 && <>
+     <div className={`flex items-center review-item-header`}>
+        <>
         <img src={ReviewPic} alt=""/>
-        <div className={`user ${window.innerWidth <= 768 && 'ml-3'}`}>
+        <div className={`user`}>
           <div className="full-name">{props?.userData?.fullName}</div>
           <div className="date">{moment(props?.postedAt).format('DD MMMM YYYY')}</div>
         </div>
-        </>}
+        </>
       
      </div>
     </div>
