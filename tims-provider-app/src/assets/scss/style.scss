@@ -1,0 +1,341 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+iframe {
+    display: none !important;
+}
+
+.css-26l3qy-menu {
+	z-index: 1000 !important;
+}
+.width-full {
+  width: 100% !important;
+}
+.ql-editor {
+	min-height: 12em;
+  }
+  .ql-container {
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	background: #fefcfc;
+  }
+  .ql-snow.ql-toolbar {
+	display: block;
+	background: #eaecec;
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+  }
+
+/* Set dropdown font-families */
+.ql-toolbar .ql-font span[data-label='Sailec Light']::before {
+  font-family: 'Sailec Light';
+}
+.ql-toolbar .ql-font span[data-label='Sofia Pro']::before {
+  font-family: 'Sofia';
+}
+.ql-toolbar .ql-font span[data-label='Slabo 27px']::before {
+  font-family: 'Slabo 27px';
+}
+.ql-toolbar .ql-font span[data-label='Roboto Slab']::before {
+  font-family: 'Roboto Slab';
+}
+.ql-toolbar .ql-font span[data-label='Inconsolata']::before {
+  font-family: 'Inconsolata';
+}
+.ql-toolbar .ql-font span[data-label='Ubuntu Mono']::before {
+  font-family: 'Ubuntu Mono';
+}
+
+/* Set content font-families */
+.ql-font-sofia {
+  font-family: 'Sofia';
+}
+.ql-font-slabo {
+  font-family: 'Slabo 27px';
+}
+.ql-font-roboto {
+  font-family: 'Roboto Slab';
+}
+.ql-font-inconsolata {
+  font-family: 'Inconsolata';
+}
+.ql-font-ubuntu {
+  font-family: 'Ubuntu Mono';
+}
+
+// Quill Editor
+.ql-toolbar {
+  border-color: #d8d6de !important;
+  .ql-formats {
+    &:focus,
+    *:focus {
+      outline: 0;
+    }
+    // button and label hover
+    .ql-picker-label,
+    button {
+      &:hover,
+      &:focus {
+        color: #f5a608 !important;
+        .ql-stroke {
+          stroke: #f5a608 !important;
+        }
+        .ql-fill {
+          fill: #f5a608 !important;
+        }
+      }
+      &.ql-active {
+        color: #f5a608 !important;
+      }
+    }
+    .ql-picker-item.ql-selected {
+      color: #f5a608 !important;
+    }
+    // quill dropdown item hover
+    .ql-picker-options {
+      .ql-picker-item:hover {
+        color: #f5a608 !important;
+      }
+      .ql-active {
+        color: #f5a608 !important;
+      }
+    }
+  }
+}
+.ql-bubble {
+  .ql-picker {
+    color: #FFFFFF !important;
+  }
+  // stroke options color
+  .ql-stroke {
+    stroke: #FFFFFF !important;
+  }
+  // fill options color
+  .ql-fill {
+    fill: #FFFFFF !important;
+  }
+}
+.ql-container {
+  border-color: #d8d6de !important;
+  font-family: 'Montserrat', Helvetica, Arial, serif;
+}
+.ql-editor {
+  a {
+    color: #f5a608;
+  }
+}
+// default picker options
+.ql-picker {
+  color: #5e5873 !important;
+}
+// stroke options color
+.ql-stroke {
+  stroke: #5e5873 !important;
+}
+.ql-active {
+  .ql-stroke {
+    stroke: #f5a608 !important;
+  }
+  .ql-fill {
+    fill: #f5a608 !important;
+  }
+}
+// fill options color
+.ql-fill {
+  fill: #5e5873 !important;
+}
+// Border rounded for editor
+.ql-toolbar,
+.ql-container {
+  border-top-right-radius: 0.357rem;
+  border-top-left-radius: 0.357rem;
+}
+.ql-toolbar {
+  + .ql-container,
+  .ql-container + & {
+    // ? If container/toolbar is below container/toolbar add bottom radius
+    border-bottom-right-radius: 0.357rem;
+    border-bottom-left-radius: 0.357rem;
+    // ? If container/toolbar is above container/toolbar remove top radius
+    border-top-right-radius: unset;
+    border-top-left-radius: unset;
+  }
+}
+
+// Dark Layout
+.dark-layout {
+  // Quill Editor
+  .quill-toolbar,
+  .ql-toolbar {
+    background-color: #283046;
+    border-color: #3b4253 !important;
+
+    // toolbar color
+    .ql-picker {
+      color: #FFFFFF !important;
+    }
+
+    .ql-stroke {
+      stroke: #FFFFFF !important;
+    }
+
+    .ql-fill {
+      fill: #FFFFFF !important;
+    }
+
+    // toolbar options colors
+    .ql-picker-options,
+    .ql-picker-label {
+      background-color: #283046;
+      .ql-active {
+        color: #f5a608 !important;
+      }
+    }
+  }
+  .ql-active {
+    .ql-stroke {
+      stroke: #f5a608 !important;
+    }
+    .ql-fill {
+      fill: #f5a608 !important;
+    }
+  }
+  .ql-bubble {
+    .ql-toolbar {
+      background: #3b4253;
+      border-radius: 2rem;
+    }
+  }
+
+  .ql-container {
+    border-color: #3b4253 !important;
+    background-color: #283046;
+  }
+
+  // syntax color
+  .ql-editor {
+    .ql-syntax {
+      background-color: #161d31;
+    }
+
+    &.ql-blank {
+      &:before {
+        color: #b4b7bd;
+      }
+    }
+  }
+}
+
+// RTL
+[data-textdirection='rtl'] {
+  .ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) {
+    i,
+    svg {
+      left: auto !important;
+      right: 0;
+    }
+  }
+}
+
+
+.cropping {
+  position: fixed;
+  bottom: 0;
+  left: 288px;
+  right: 28px;
+  bottom: 0;
+  z-index: 100000000;
+  height: calc(100vh - 200px);
+}
+
+.crop-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 25%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-content {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0 , 0 , 0 , 0.1), 0 1px 2px -1px rgba(0 , 0 , 0 , 0.1);
+}
+
+.slider {
+  padding: 22px 0px;
+}
+
+
+
+.controls:hover input[type='range']::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px 8px rgba(63, 81, 181, 0.16);
+  border-radius: 50%;
+}
+
+.controls:hover input[type='range']::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 8px rgba(63, 81, 181, 0.16);
+}
+
+.MuiSlider-root {
+  display: flex !important;
+  align-items: center !important;
+  color: #ffffff !important;
+  height: 7px !important;
+}
+
+.control-left {
+  margin-top: -7px;
+  font-size: 18px;
+  color: #e73a5d;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.control-right {
+  margin-top: -7px;
+  font-size: 18px;
+  color: #e73a5d;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.MuiSlider-track {
+  background-color: #ff9015 !important;
+}
+
+.MuiSlider-thumb {
+  background-color: #e73a5d !important;
+}
+
+.txt-ellipsis{overflow:hidden;text-overflow:ellipsis;vertical-align:middle;white-space:nowrap;width: 300px}
+
+.searchProduct:hover {
+  background-color: #f3f2f7 !important;
+}
